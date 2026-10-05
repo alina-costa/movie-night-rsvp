@@ -131,8 +131,6 @@ button {
   font-weight: normal;
 
   margin: 0 0 35px;
-
-  /* text-transform: uppercase; */
 }
 
 /* RSVP options */
@@ -467,7 +465,7 @@ footer {
   margin: 0 auto;
 }
 
-.confirmation-screen h1 {
+/* .confirmation-screen h1 {
   margin: 40px 0 25px;
 
   font-size: 2.2rem;
@@ -475,7 +473,7 @@ footer {
   text-shadow:
     0 0 5px #39ff14,
     0 0 12px rgba(57, 255, 20, 0.5);
-}
+} */
 
 .confirmation-screen > p {
   font-size: 1.5rem;
@@ -498,22 +496,6 @@ footer {
   aspect-ratio: 480 / 259;
 
   border: 0;
-}
-
-.giphy-credit {
-  margin: 0 0 25px;
-
-  font-size: 1rem;
-  text-align: center;
-}
-
-.giphy-credit a {
-  /* color: rgba(57, 255, 20, 0.6); */
-  text-decoration: none;
-}
-
-.giphy-credit a:hover {
-  /* color: #39ff14; */
 }
 
 /* -------------------------

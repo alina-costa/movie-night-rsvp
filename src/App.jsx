@@ -67,7 +67,7 @@ function App() {
       <div className="terminal">
         {screen === "invitation" && (
           <>
-            <h1 className="inviteTitle">
+            <h1>
               The RAT LORD cordially invites you to the SEWER for a TASTEFUL
               MOVIE AND DINING EXPERIENCE.
             </h1>
