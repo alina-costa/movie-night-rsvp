@@ -1,0 +1,607 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+:root {
+  --green: #39ff14;
+  --dark-green: #0aff00;
+  --black: #020402;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  /* justify-content: center; */
+}
+
+body {
+  background: var(--black);
+  color: var(--green);
+  font-family: "VT323", monospace;
+}
+
+button {
+  font-family: inherit;
+}
+
+.screen {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+
+  background: radial-gradient(ellipse at center, #061006 0%, #020402 70%);
+
+  text-shadow:
+    0 0 4px var(--green),
+    0 0 10px rgba(57, 255, 20, 0.6);
+}
+
+/* CRT scanlines */
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 10;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+
+  opacity: 0.7;
+}
+
+/* Main terminal */
+
+.terminal {
+  position: relative;
+
+  text-align: center;
+
+  width: min(1000px, calc(100% - 30px));
+
+  min-height: 100vh;
+
+  padding: 45px 50px;
+
+  border-left: 2px solid var(--green);
+  border-right: 2px solid var(--green);
+
+  box-shadow:
+    0 0 8px rgba(57, 255, 20, 0.5),
+    inset 0 0 30px rgba(57, 255, 20, 0.04);
+}
+
+/* Top invitation text */
+
+.header {
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.05;
+
+  /* text-transform: uppercase; */
+
+  margin-bottom: 30px;
+}
+
+.header p {
+  margin: 0;
+}
+
+/* Image area */
+
+.hero {
+  display: flex;
+  justify-content: center;
+
+  margin: 30px 0 40px;
+}
+
+.rat-container {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.rat-image {
+  width: 450px;
+  max-width: 85%;
+  height: auto;
+
+  filter: drop-shadow(0 0 5px #39ff14)
+    drop-shadow(0 0 15px rgba(57, 255, 20, 0.4));
+}
+
+/* Question */
+
+.invitation h2 {
+  font-size: clamp(28px, 4vw, 42px);
+
+  font-weight: normal;
+
+  margin: 0 0 35px;
+
+  /* text-transform: uppercase; */
+}
+
+/* RSVP options */
+
+.options {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-left: 45px;
+}
+
+.options button {
+  width: 300px;
+
+  padding: 3px 12px;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--green);
+
+  font-size: clamp(25px, 3vw, 36px);
+
+  cursor: pointer;
+
+  text-align: left;
+
+  text-shadow:
+    0 0 4px var(--green),
+    0 0 10px rgba(57, 255, 20, 0.6);
+
+  transition:
+    background 0.1s,
+    color 0.1s;
+}
+
+.options button span {
+  display: inline-block;
+
+  width: 35px;
+
+  opacity: 1;
+}
+
+.options button:hover {
+  background: var(--green);
+  color: #000;
+
+  text-shadow: none;
+}
+
+.options button:hover span {
+  opacity: 1;
+}
+
+/* Footer */
+
+footer {
+  position: absolute;
+
+  bottom: 35px;
+  left: 50px;
+
+  font-size: 24px;
+
+  opacity: 0.7;
+}
+
+/* -------------------------
+   RSVP SCREEN
+-------------------------- */
+
+.rsvp-screen {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.terminal-message {
+  font-size: 2rem;
+  margin: 0 0 40px;
+  text-shadow: 0 0 8px #39ff14;
+}
+
+.rsvp-section {
+  margin-bottom: 40px;
+}
+
+.terminal-question {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+}
+
+/* -------------------------
+   NAME INPUT
+-------------------------- */
+
+.terminal-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+
+  border-bottom: 2px solid #39ff14;
+  padding: 8px 0;
+
+  font-size: 1.8rem;
+}
+
+.terminal-input-wrapper span {
+  flex-shrink: 0;
+}
+
+.terminal-input-wrapper input {
+  width: 100%;
+  min-width: 0;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  color: #39ff14;
+
+  font-family: "VT323", monospace;
+  font-size: 1.8rem;
+
+  text-transform: uppercase;
+}
+
+.terminal-input-wrapper input::placeholder {
+  color: rgba(57, 255, 20, 0.4);
+}
+
+/* -------------------------
+   RSVP SCREEN
+-------------------------- */
+
+.rsvp-screen {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.terminal-message {
+  font-size: 2rem;
+  margin: 0 0 40px;
+  text-shadow: 0 0 8px #39ff14;
+}
+
+.rsvp-section {
+  margin-bottom: 40px;
+}
+
+.terminal-question {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+}
+
+/* -------------------------
+   NAME INPUT
+-------------------------- */
+
+.terminal-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+
+  border-bottom: 2px solid #39ff14;
+  padding: 8px 0;
+
+  font-size: 1.8rem;
+}
+
+.terminal-input-wrapper span {
+  flex-shrink: 0;
+}
+
+.terminal-input-wrapper input {
+  width: 100%;
+  min-width: 0;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  color: #39ff14;
+
+  font-family: "VT323", monospace;
+  font-size: 1.8rem;
+
+  text-transform: uppercase;
+}
+
+.terminal-input-wrapper input::placeholder {
+  color: rgba(57, 255, 20, 0.4);
+}
+
+/* -------------------------
+   RSVP OPTIONS
+-------------------------- */
+
+.rsvp-screen .choices {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  gap: 12px;
+
+  width: 100%;
+}
+
+.rsvp-screen .choices button {
+  width: 100%;
+  min-height: 52px;
+
+  padding: 12px 16px;
+
+  border: 1px solid transparent;
+  background: transparent;
+
+  color: #39ff14;
+
+  font-family: "VT323", monospace;
+  font-size: 1.7rem;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.rsvp-screen .options button:hover,
+.rsvp-screen .options button.selected {
+  border-color: #39ff14;
+
+  text-shadow: 0 0 8px #39ff14;
+  background: var(--green);
+  color: #000;
+}
+
+/* -------------------------
+   SUBMIT
+-------------------------- */
+
+.submit-button {
+  width: 100%;
+  min-height: 54px;
+
+  margin-top: 10px;
+  padding: 12px 16px;
+
+  background: #39ff14;
+  border: 2px solid #39ff14;
+
+  color: black;
+
+  font-family: "VT323", monospace;
+  font-size: 1.8rem;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.45);
+}
+
+.submit-button:hover:not(:disabled) {
+  background: black;
+  color: #39ff14;
+}
+
+.submit-button:disabled {
+  background: transparent;
+  color: rgba(57, 255, 20, 0.35);
+  border-color: rgba(57, 255, 20, 0.35);
+
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.guest-list {
+  margin-top: 50px;
+  padding-top: 25px;
+
+  border-top: 1px dashed rgba(57, 255, 20, 0.5);
+}
+
+.guest-list-title {
+  margin: 0 0 8px;
+
+  font-size: 1.5rem;
+
+  text-shadow: 0 0 6px #39ff14;
+}
+
+.guest-count {
+  margin: 0 0 20px;
+
+  color: rgba(57, 255, 20, 0.6);
+  font-size: 1.2rem;
+}
+
+.guest-names {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-left: 45px;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr); */
+  /* gap: 8px 24px; */
+  padding: 3px 12px;
+}
+
+.guest-names p {
+  margin: 0;
+  text-align: left;
+
+  font-size: 1.4rem;
+}
+
+.confirmation-screen {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 0 auto;
+}
+
+.confirmation-screen h1 {
+  margin: 40px 0 25px;
+
+  font-size: 2.2rem;
+
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 12px rgba(57, 255, 20, 0.5);
+}
+
+.confirmation-screen > p {
+  font-size: 1.5rem;
+}
+
+.bobinski-container {
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 30px auto 8px;
+
+  overflow: hidden;
+
+  /* border: 2px solid #39ff14;
+
+  box-shadow:
+    0 0 8px rgba(57, 255, 20, 0.5),
+    0 0 20px rgba(57, 255, 20, 0.2); */
+}
+
+.bobinski-gif {
+  display: block;
+
+  width: 100%;
+  /* width: 100%; */
+  max-width: 1000px;
+  aspect-ratio: 480 / 259;
+
+  border: 0;
+}
+
+.giphy-credit {
+  margin: 0 0 25px;
+
+  font-size: 1rem;
+  text-align: center;
+}
+
+.giphy-credit a {
+  /* color: rgba(57, 255, 20, 0.6); */
+  text-decoration: none;
+}
+
+.giphy-credit a:hover {
+  /* color: #39ff14; */
+}
+
+/* -------------------------
+   MOBILE
+-------------------------- */
+
+@media (max-width: 600px) {
+  .terminal {
+    width: calc(100% - 24px);
+
+    padding: 24px 18px;
+
+    margin: 12px auto;
+  }
+
+  .rsvp-screen {
+    width: 100%;
+  }
+
+  .terminal-message {
+    font-size: 1.6rem;
+    margin-bottom: 32px;
+  }
+
+  .terminal-question {
+    font-size: 1.5rem;
+  }
+
+  .terminal-input-wrapper,
+  .terminal-input-wrapper input {
+    font-size: 1.5rem;
+  }
+
+  .rsvp-section {
+    margin-bottom: 32px;
+  }
+
+  .rsvp-screen .options {
+    gap: 10px;
+  }
+
+  .rsvp-screen .options button {
+    min-height: 52px;
+    font-size: 1.5rem;
+    width: 200px;
+  }
+
+  .submit-button {
+    min-height: 54px;
+    font-size: 1.6rem;
+  }
+
+  .status {
+    font-size: 1.2rem;
+    margin-top: 24px;
+  }
+  .guest-list {
+    margin-top: 40px;
+  }
+
+  .guest-list-title {
+    font-size: 1.3rem;
+  }
+
+  .guest-names {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .guest-names p {
+    font-size: 1.3rem;
+  }
+  .confirmation-screen h1 {
+    font-size: 1.7rem;
+  }
+
+  .confirmation-screen > p {
+    font-size: 1.3rem;
+  }
+}
+
+footer {
+  left: 20px;
+}
