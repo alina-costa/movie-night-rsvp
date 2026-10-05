@@ -1,5 +1,6 @@
 import "./index.css";
 import ratImage from "./assets/rat.png";
+import rat2Image from "./assets/rat2.svg";
 import { useState, useEffect } from "react";
 import { supabase } from "./lib/supabaseClient";
 
@@ -174,13 +175,8 @@ function App() {
           <div className="confirmation-screen">
             {attending ? (
               <>
-                <p className="status">
-                  YOUR ATTENDANCE HAS BEEN DOCUMENTED.
-                  <br />
-                  THE RATS REJOICE!
-                </p>
                 <h1>WELCOME TO THE OTHER WORLD, {name.toUpperCase()}.</h1>
-
+                {/* <br /> */}
                 <div className="bobinski-container">
                   <iframe
                     src="https://giphy.com/embed/hBSkbjMsxzW0ebZrGH"
@@ -190,17 +186,24 @@ function App() {
                     title="Mr Bobinsky"
                   />
                 </div>
+                <br />
 
-                {/* <p className="status">Sunday, October 25th, 6:00PM</p>
-                <p className="status">Location dependent on headcount.</p> */}
-
-                <p className="giphy-credit">
-                  <a
-                    href="https://giphy.com/gifs/LAIKAstudios-stopmotion-laika-laikastudio-hBSkbjMsxzW0ebZrGH"
-                    target="_blank"
-                    rel="noreferrer"
-                  ></a>
+                <br />
+                <p className="status">
+                  YOUR ATTENDANCE HAS BEEN DOCUMENTED.
+                  <br />
+                  <br />
+                  THE RATS REJOICE!
                 </p>
+                <br />
+                <p>Comfy attire encouraged</p>
+                <div className="rat-container">
+                  <img
+                    src={rat2Image}
+                    alt="A suspicious rat holding a movie ticket"
+                    className="rat2-image"
+                  />
+                </div>
               </>
             ) : (
               <>
