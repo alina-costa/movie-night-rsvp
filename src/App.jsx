@@ -9,9 +9,6 @@ function App() {
   const [attending, setAttending] = useState(null);
 
   const [guests, setGuests] = useState([]);
-  // { id: 1, name: "RAT LORD", attending: true },
-  // { id: 2, name: "COLE", attending: true },
-  // { id: 3, name: "BAD VIBES", attending: false },
 
   async function getGuests() {
     const { data, error } = await supabase
@@ -57,7 +54,6 @@ function App() {
     setScreen("confirmation");
   }
 
-  // TO DO: after submitting "Yes", move to a new screen that shows a dancing rat celebrating.
   // TODO Food: cornbread muffin with mashed potato icing, and popcorn chicken on top.
 
   return (
@@ -80,6 +76,11 @@ function App() {
             </div>
 
             <section className="invitation">
+              <p className="status">
+                Sunday, October 25th, 6:00PM
+                <br />
+                Location dependent on headcount.
+              </p>
               <h2>How do you ACCEPT this invitation?</h2>
 
               <div className="options">
@@ -190,8 +191,8 @@ function App() {
                   />
                 </div>
 
-                <p className="status">Sunday, October 25th, 6:00PM</p>
-                <p className="status">Location dependent on headcount.</p>
+                {/* <p className="status">Sunday, October 25th, 6:00PM</p>
+                <p className="status">Location dependent on headcount.</p> */}
 
                 <p className="giphy-credit">
                   <a
