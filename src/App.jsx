@@ -174,7 +174,9 @@ function App() {
             {attending ? (
               <>
                 <p className="status">
-                  YOUR ATTENDANCE HAS BEEN DOCUMENTED. THE RATS REJOICE!
+                  YOUR ATTENDANCE HAS BEEN DOCUMENTED.
+                  <br />
+                  THE RATS REJOICE!
                 </p>
                 <h1>WELCOME TO THE OTHER WORLD, {name.toUpperCase()}.</h1>
 
