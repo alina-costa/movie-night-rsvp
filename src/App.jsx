@@ -67,7 +67,6 @@ function App() {
       <div className="terminal">
         {screen === "invitation" && (
           <>
-            {/* add some line height here */}
             <h1 className="inviteTitle">
               The RAT LORD cordially invites you to the SEWER for a TASTEFUL
               MOVIE AND DINING EXPERIENCE.
@@ -79,7 +78,6 @@ function App() {
                 className="rat-image"
               />
             </div>
-            {/* </section> */}
 
             <section className="invitation">
               <h2>How do you ACCEPT this invitation?</h2>
@@ -173,8 +171,6 @@ function App() {
         )}
         {screen === "confirmation" && (
           <div className="confirmation-screen">
-            {/* <p className="terminal-message">TRANSMISSION COMPLETE.</p> */}
-
             {attending ? (
               <>
                 <p className="status">
@@ -200,9 +196,7 @@ function App() {
                     href="https://giphy.com/gifs/LAIKAstudios-stopmotion-laika-laikastudio-hBSkbjMsxzW0ebZrGH"
                     target="_blank"
                     rel="noreferrer"
-                  >
-                    {/* via GIPHY */}
-                  </a>
+                  ></a>
                 </p>
               </>
             ) : (
