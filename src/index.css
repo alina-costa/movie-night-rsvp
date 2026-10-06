@@ -177,6 +177,41 @@ button {
     background 0.1s,
     color 0.1s;
 }
+.confirmation-options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 50px 140px;
+}
+
+.confirmation-options p {
+  width: 100%;
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+  padding-left: 35px;
+
+  color: #39ff14;
+
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;
+  text-align: left;
+  line-height: 1.1;
+
+  text-shadow: 0 0 8px #39ff14;
+}
+
+.confirmation-options p::before {
+  content: "> ";
+  margin-right: 8px;
+}
+
+.confirmation-options span {
+  margin-right: 8px;
+}
 
 .options button span {
   display: inline-block;
@@ -587,6 +622,15 @@ footer {
 
   .confirmation-screen > p {
     font-size: 1.3rem;
+  }
+  .confirmation-options {
+    gap: 0px;
+    margin: 24px -10px;
+  }
+
+  .confirmation-options p {
+    min-height: 30px;
+    font-size: 1.1rem;
   }
 }
 

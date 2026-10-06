@@ -11,21 +11,21 @@ function App() {
 
   const [guests, setGuests] = useState([]);
 
-  async function getGuests() {
-    const { data, error } = await supabase
-      .from("rsvps")
-      .select("*")
-      .order("created_at", { ascending: true });
+  useEffect(() => {
+    async function getGuests() {
+      const { data, error } = await supabase
+        .from("rsvps")
+        .select("*")
+        .order("created_at", { ascending: true });
 
-    if (error) {
-      console.error("Error loading RSVPs:", error);
-      return;
+      if (error) {
+        console.error("Error loading RSVPs:", error);
+        return;
+      }
+
+      setGuests(data);
     }
 
-    setGuests(data);
-  }
-
-  useEffect(() => {
     getGuests();
   }, []);
 
@@ -195,8 +195,22 @@ function App() {
                   <br />
                   THE RATS REJOICE!
                 </p>
-                <br />
-                <p>Comfy attire encouraged</p>
+                <div className="confirmation-options">
+                  <p>
+                    <span>MOVIE:</span> CORALINE
+                  </p>
+
+                  <p>
+                    <span>ATTIRE:</span> COMFY
+                  </p>
+                  <p>
+                    <span>DATE:</span> 10/25/26, 6:00PM
+                  </p>
+                  <p>
+                    <span>LOCATION:</span> TBD
+                  </p>
+                </div>
+
                 <div className="rat-container">
                   <img
                     src={rat2Image}
