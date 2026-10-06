@@ -187,8 +187,6 @@ function App() {
                   />
                 </div>
                 <br />
-
-                <br />
                 <p className="status">
                   YOUR ATTENDANCE HAS BEEN DOCUMENTED.
                   <br />
